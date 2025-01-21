@@ -1,0 +1,88 @@
+.navbar {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    padding: 5px 0; 
+    background-color: #3B3C36; 
+    z-index: 1000; 
+    margin: 0; 
+}
+
+
+ .nav-logo{
+    display: flex;
+    align-items: center;
+    gap : 20px
+} 
+
+ .nav-logo img{
+    width: 70px;
+    border-radius: 30px;
+} 
+
+.nav-logo p {
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav-menu hr{
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background: white;
+}
+
+.nav-menu li {
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+
+  }
+  
+  .nav-menu li:hover::after,
+  .nav-menu li.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff; /* Adjust to your theme color */
+  }
+
+.nav-login button{
+    margin-top: 17px;
+    width: 100px;
+    height: 40px;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 75px;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    background: blue;
+    cursor: pointer;
+}
+
+
+.no-style{
+  color: inherit;  /* Use the parent's text color */
+  text-decoration: none; 
+}
+

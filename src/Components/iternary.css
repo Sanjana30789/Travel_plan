@@ -1,0 +1,169 @@
+
+
+/* Apply body styles only for the travel form page */
+.travel-form-page body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, rgb(21, 107, 135), darkblue); 
+    margin-top: 30px;
+    padding: 40px;
+    color: #333;
+  }
+  
+  .travel-form-page .travel-planner {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .travel-form-page .form-container {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .travel-form-page h1 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .travel-form-page .subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .travel-form-page .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .travel-form-page label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .travel-form-page input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .travel-form-page input:focus {
+    border-color: #007BFF;
+  }
+  
+  .travel-form-page .form-row {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .travel-form-page .submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .travel-form-page .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .travel-form-page .submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .travel-form-page .loading {
+    color: #fff;
+    font-style: italic;
+  }
+  
+  .travel-form-page .response-container {
+    padding: 20px;
+  }
+  
+  .travel-form-page .response-section {
+    margin-bottom: 20px;
+  }
+  
+  .travel-form-page h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .travel-form-page h3 {
+    font-size: 1.2rem;
+    color: #007BFF;
+    margin-bottom: 10px;
+  }
+  
+  .travel-form-page h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .travel-form-page ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .travel-form-page li {
+    margin: 5px 0;
+    padding: 5px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+  }
+  
+  .travel-form-page .response-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .travel-form-page .cost-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .travel-form-page .cost-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+  }
+  
+  .travel-form-page .day-plan {
+    margin-bottom: 15px;
+  }
+  
+  @media (max-width: 600px) {
+    .travel-form-page .form-row {
+      flex-direction: column;
+    }
+  
+    .travel-form-page .response-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
