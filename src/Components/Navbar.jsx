@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../assets/2.png';
 import {Link} from 'react-router-dom';
+
 const Navbar = () => {
   const [menu, setMenu] = useState("");
 
@@ -40,7 +41,7 @@ const Navbar = () => {
           className={menu === "Flights Book" ? "active" : ""} 
           onClick={() => setMenu("Flights Book")}
         >
-          Flights Book
+          <Link to="/flightsearch" className="no-style">Flights Book</Link>
         </li>
         <li 
           className={menu === "Example" ? "active" : ""} 
