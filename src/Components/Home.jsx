@@ -1,159 +1,173 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import styled, { keyframes } from 'styled-components';
-import backgroundImage from '../assets/1.jpg'; // Update the path to your image
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import AboutUs from './About'
 
-const HomePage = () => {
+// Import the local image(s)
+import parisImage from "../assets/paris.jpg";
+import delhiImage from "../assets/newdelhi.webp";
+import mumbaiImage from "../assets/mumbai.jpg";
+import newyorkImage from "../assets/new-york.avif";
+
+// Import your background video
+import backgroundVideo from "../assets/Explore with us.mp4";  // Adjust the path based on your project structure
+
+const Homepage = () => {
+  const navigate = useNavigate();
+
+  const styles = {
+    container: {
+      position: "relative",
+      height: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      color: "#fff",
+      textAlign: "center",
+      fontFamily: "Arial, sans-serif",
+      margin: 0,
+      padding: 0,
+      overflow: "hidden",
+    },
+    video: {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      zIndex: -1,  // Ensure the video stays behind the content
+    },
+    heading: {
+      fontSize: "3rem",
+      fontWeight: "bold",
+      marginBottom: "1rem",
+      textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
+    },
+    locationList: {
+      display: "flex",
+      gap: "1rem",
+      marginBottom: "2rem",
+      flexWrap: "wrap",
+      justifyContent: "center",
+    },
+    locationButton: {
+      fontSize: "1.2rem",
+      backgroundColor: "black",
+      color: "#fff",
+      padding: "0.5rem 1rem",
+      border: "none",
+      borderRadius: "20px",
+      cursor: "pointer",
+      transition: "all 0.3s ease",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
+    },
+    button: {
+      fontSize: "1.5rem",
+      padding: "0.8rem 2rem",
+      backgroundColor: "black",
+      color: "#fff",
+      border: "none",
+      borderRadius: "30px",
+      cursor: "pointer",
+      transition: "all 0.3s ease",
+      boxShadow: "0 6px 12px rgba(0, 0, 0, 0.4)",
+    },
+    destinations: {
+      padding: "2rem",
+      backgroundColor: "rgba(0, 0, 0, 0.7)",
+      borderRadius: "15px",
+      width: "90%",
+      margin: "2rem auto",
+    },
+    destinationHeading: {
+      fontSize: "2.5rem",
+      fontWeight: "bold",
+      color: "#fff",
+      marginBottom: "1.5rem",
+      textAlign: "center",
+    },
+    destinationGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+      gap: "1.5rem",
+    },
+    destinationCard: {
+      position: "relative",
+      overflow: "hidden",
+      borderRadius: "15px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.4)",
+    },
+    destinationImage: {
+      width: "100%",
+      height: "200px",
+      objectFit: "cover",
+      borderRadius: "15px",
+    },
+    readMore: {
+      position: "absolute",
+      bottom: "10px",
+      right: "10px",
+      padding: "0.5rem 1rem",
+      backgroundColor: "#ff5733",
+      color: "#fff",
+      border: "none",
+      borderRadius: "10px",
+      cursor: "pointer",
+      transition: "all 0.3s ease",
+    },
+  };
+
+  const handleLocationClick = (location) => {
+    navigate(`/location/${location.toLowerCase()}`);
+  };
+
   return (
-    <HomePageContainer>
-      <BackgroundImage />
-      <motion.div
-        className="hero"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
-      >
-        <HeroTitle>Explore The World With Us</HeroTitle>
-        <HeroDescription>
-          Personalized travel itineraries to make your journey unforgettable.
-        </HeroDescription>
-        <ExploreButton
-          initial={{ y: -50 }}
-          animate={{ y: 0 }}
-          transition={{ type: 'spring', stiffness: 100 }}
-        >
-          Start Your Journey
-        </ExploreButton>
-      </motion.div>
+    <div>
+      {/* Fullscreen Hero Section with Background Video */}
+      <div style={styles.container}>
+        <video style={styles.video} autoPlay loop muted>
+          <source src={backgroundVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* <h1 style={styles.heading}>Explore Places With Us</h1> */}
+        {/* <div style={styles.locationList}>
+          {["London", "Paris", "Mumbai", "Delhi"].map((location) => (
+            <button
+              key={location}
+              style={styles.locationButton}
+              onClick={() => handleLocationClick(location)}
+            >
+              {location}
+            </button>
+          ))}
+        </div> */}
+        {/* <button style={styles.button}>Start Exploring</button> */}
+      </div>
 
-      {/* Animating Travel Elements */}
-      <TravelIcons>
-        <Icon
-          as={motion.div}
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          🌍
-        </Icon>
-        <Icon
-          as={motion.div}
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5 }}
-        >
-          ✈️
-        </Icon>
-        <Icon
-          as={motion.div}
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 2 }}
-        >
-          🧳
-        </Icon>
-      </TravelIcons>
+      {/* Top Destinations Section */}
+      <div style={styles.destinations}>
+        <h2 style={styles.destinationHeading}>Top Destinations</h2>
+        <div style={styles.destinationGrid}>
+          {[{ name: "Paris", img: parisImage }, { name: "Delhi", img: delhiImage }, { name: "New-York", img: newyorkImage }, { name: "Mumbai", img: mumbaiImage }].map((destination) => (
+            <div key={destination.name} style={styles.destinationCard}>
+              <img
+                src={destination.img}
+                alt={destination.name}
+                style={styles.destinationImage}
+              />
+              <button style={styles.readMore}>Read More</button>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      {/* Animated Scroll Down Arrow */}
-      <ScrollDown
-        as={motion.div}
-        initial={{ y: 10 }}
-        animate={{ y: 0 }}
-        transition={{ repeat: Infinity, repeatType: 'reverse', duration: 1 }}
-      >
-        ⬇️ Scroll Down
-      </ScrollDown>
-    </HomePageContainer>
+      {/* About us section */}
+      <div>
+        <AboutUs/>
+      </div>
+    </div>
   );
 };
 
-export default HomePage;
-
-// Styled Components
-
-const HomePageContainer = styled.div`
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  overflow: hidden;
-  color: white;
-`;
-
-const BackgroundImage = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url(${backgroundImage}) no-repeat center center/cover;
-  filter: opacity(0.8); /* Adjust this value to control the opacity of the image */
-  z-index: -1; /* Keeps the image behind the content */
-`;
-
-const HeroTitle = styled.h1`
-  font-size: 3rem;
-  font-weight: bold;
-  color : black;
-  margin-bottom: 20px;
-  z-index: 1;
-`;
-
-const HeroDescription = styled.p`
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-  color : black;
-  max-width: 500px;
-  line-height: 1.6;
-  z-index: 1;
-`;
-
-const ExploreButton = styled(motion.button)`
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  &:hover {
-    background-color: #0056b3;
-  }
-  z-index: 1;
-`;
-
-const TravelIcons = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 30px;
-  z-index: 1;
-`;
-
-const bounceAnimation = keyframes`
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-`;
-
-const Icon = styled.div`
-  font-size: 3rem;
-  animation: ${bounceAnimation} 2s infinite;
-`;
-
-const ScrollDown = styled.div`
-  position: absolute;
-  bottom: 20px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  animation: ${bounceAnimation} 1s infinite;
-  z-index: 1;
-`;
+export default Homepage;
