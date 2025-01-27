@@ -51,7 +51,7 @@ const footerStyles = {
   container: {
     backgroundColor: '#3B3C36',
     color: 'white',
-    top: '0', 
+    // top: '0', 
     left: '0', 
     width: '100vw',
     display: 'flex',

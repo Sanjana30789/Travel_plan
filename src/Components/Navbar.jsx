@@ -23,13 +23,14 @@ const Navbar = () => {
           className={menu === "Explore" ? "active" : ""} 
           onClick={() => setMenu("Explore")}
         >
-          Explore
+           <Link to="/explore" className="no-style">Explore</Link>
         </li>
         <li 
           className={menu === "Local-Guide" ? "active" : ""} 
           onClick={() => setMenu("Local-Guide")}
         >
-          Local-Guide
+          <Link to="/map" className="no-style">Local Guide</Link>
+          
         </li>
         <li
             className={menu === "Itenary booking" ? "active" : ""}
@@ -53,6 +54,7 @@ const Navbar = () => {
           onClick={() => setMenu("About Us")}
         ><Link to="/about" className="no-style">About Us</Link> 
         </li>
+
         {/* <li
           className={menu === "Contact" ? "active" : ""}
           onClick={() => setMenu("Contact")}

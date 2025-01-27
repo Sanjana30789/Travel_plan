@@ -1,12 +1,12 @@
 
-
 /* Apply body styles only for the travel form page */
-.travel-form-page body {
+.travel-form-page  {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, rgb(21, 107, 135), darkblue); 
+    /* background: linear-gradient(to right, rgb(21, 107, 135), darkblue);  */
     margin-top: 30px;
     padding: 40px;
     color: #333;
+    margin-top: 40px;
   }
   
   .travel-form-page .travel-planner {
