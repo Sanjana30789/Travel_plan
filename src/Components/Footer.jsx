@@ -1,6 +1,35 @@
 import React from 'react';
 
+import { useEffect } from "react";
+
 const Footer = () => {
+  // Use effect hook to load the chatbot script
+  useEffect(() => {
+    if (!document.getElementById("docsbot-script")) {
+      const script = document.createElement("script");
+      script.id = "docsbot-script";
+      script.type = "text/javascript";
+      script.async = true;
+      script.src = "https://widget.docsbot.ai/chat.js";
+
+      script.onload = () => {
+        if (window.DocsBotAI && typeof window.DocsBotAI.mount === "function") {
+          window.DocsBotAI.mount({
+            id: "BEN1YpwH0ODr8pzVSYi7/CerF6wu4yNBqz8bSSDqw",
+          });
+        } else {
+          console.error("DocsBotAI is not properly initialized.");
+        }
+      };
+
+      script.onerror = () => {
+        console.error("Failed to load the DocsBot script.");
+      };
+
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <footer style={footerStyles.container}>
       <div style={footerStyles.sections}>
@@ -16,10 +45,18 @@ const Footer = () => {
         <div style={footerStyles.section}>
           <h3 style={footerStyles.heading}>Quick Links</h3>
           <ul style={footerStyles.list}>
-            <li style={footerStyles.listItem}><a href="#explore" style={footerStyles.link}>explore</a></li>
-            <li style={footerStyles.listItem}><a href="#about" style={footerStyles.link}>About Us</a></li>
-            <li style={footerStyles.listItem}><a href="#iternary" style={footerStyles.link}>Iternary</a></li>
-            <li style={footerStyles.listItem}><a href="#localguide" style={footerStyles.link}>Localguide</a></li>
+            <li style={footerStyles.listItem}>
+              <a href="#explore" style={footerStyles.link}>Explore</a>
+            </li>
+            <li style={footerStyles.listItem}>
+              <a href="#about" style={footerStyles.link}>About Us</a>
+            </li>
+            <li style={footerStyles.listItem}>
+              <a href="#itinerary" style={footerStyles.link}>Itinerary</a>
+            </li>
+            <li style={footerStyles.listItem}>
+              <a href="#localguide" style={footerStyles.link}>Local Guide</a>
+            </li>
           </ul>
         </div>
 
@@ -27,9 +64,9 @@ const Footer = () => {
         <div style={footerStyles.section}>
           <h3 style={footerStyles.heading}>Connect with Us</h3>
           <div style={footerStyles.socialIcons}>
-            <a href="https://facebook.com" style={footerStyles.icon}>&#xf09a;</a> {/* Font Awesome Facebook Icon */}
-            <a href="https://twitter.com" style={footerStyles.icon}>&#xf099;</a> {/* Font Awesome Twitter Icon */}
-            <a href="https://instagram.com" style={footerStyles.icon}>&#xf16d;</a> {/* Font Awesome Instagram Icon */}
+            <a href="https://facebook.com" style={footerStyles.icon}>&#xf09a;</a>
+            <a href="https://twitter.com" style={footerStyles.icon}>&#xf099;</a>
+            <a href="https://instagram.com" style={footerStyles.icon}>&#xf16d;</a>
           </div>
           <p style={footerStyles.contact}>
             Email: <a href="mailto:contact@smart-chair.com" style={footerStyles.link}>contact@smart-chair.com</a>
@@ -45,6 +82,8 @@ const Footer = () => {
     </footer>
   );
 };
+
+
 
 // Footer Styles
 const footerStyles = {
