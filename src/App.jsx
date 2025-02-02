@@ -163,9 +163,9 @@ import FlightResults from './Components/FlightResults';
 import { searchFlights } from './services/api';
 import PhotoSphereViewer from './Components/PhotoSphere';
 import Explore from './Components/Explore';
-import Map from './components/Map';
-import ChatInterface from './components/ChatInterface';
-import WeatherWidget from './components/WeatherWidget';
+import Map from './Components/Map';
+import ChatInterface from './Components/ChatInterface';
+import WeatherWidget from './Components/WeatherWidget';
 import {
   Container,
   CssBaseline,
@@ -317,10 +317,22 @@ function App() {
             <Route
               path="/flightsearch"
               element={
-                <Container sx={{ mt: 15 }}>
-                  <Typography variant="h3" align="center" sx={{ mt: 4, mb: 4 }}>
-                    Flight Booking System
-                  </Typography>
+                <Container sx={{ mt: 10 }} >
+                 <Typography 
+  variant="h3" 
+  align="center" 
+  sx={{ 
+    mt: 2, 
+    mb: 4, 
+    fontWeight: '300', // Make it bold
+    fontSize: '3rem', // Increase the font size
+    color: '#2D3E50',
+     // Change color
+  }}
+>
+  Flight Booking System
+</Typography>
+
                   <FlightSearch onSearch={handleSearch} />
                   {loading && (
                     <Box display="flex" justifyContent="center" sx={{ mt: 4 }}>
@@ -345,14 +357,12 @@ function App() {
               path="/photosphere"
               element={
                 <div className="app-container">
-                  <h1 style={{ fontFamily: 'cursive', textAlign: 'center', margin: '20px 0' }}>
-                    VOYAGEHACK Photo Sphere Demo
-                  </h1>
+                
                   <PhotoSphereViewer panorama="/1.jpg" caption="A 1" galleryItems={galleryItems} />
                 </div>
               }
             />
-            <Route
+        <Route
               path="/map"
               element={
                 <div className="appcontainer">
@@ -373,6 +383,7 @@ function App() {
                 </div>
               }
             />
+
           </Routes>
 
           {/* <Footer /> */}

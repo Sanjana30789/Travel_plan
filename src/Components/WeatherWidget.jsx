@@ -4,15 +4,12 @@ import {
   CardContent, 
   Typography, 
   Box, 
-  Tabs, 
-  Tab,
-  IconButton
+  IconButton 
 } from '@mui/material';
 import { 
   WbSunny, 
   Cloud, 
   Opacity, 
-  Air,
   ExpandMore,
   ExpandLess
 } from '@mui/icons-material';
@@ -24,7 +21,6 @@ function WeatherWidget({ location }) {
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [expanded, setExpanded] = useState(false);
-  const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
     if (!location) return;
@@ -74,7 +70,7 @@ function WeatherWidget({ location }) {
   };
 
   return (
-    <Card className="weather-widget">
+    <Card className="weather-widget" sx={{ marginTop: { xs: 2, sm: 0 }, marginBottom: { xs: 3, sm: 0 } }}>
       <CardContent>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Typography variant="h6">Weather</Typography>
@@ -123,7 +119,8 @@ function WeatherWidget({ location }) {
                           p: 1,
                           minWidth: 60,
                           borderRadius: 1,
-                          bgcolor: 'rgba(0,0,0,0.04)'
+                          bgcolor: 'rgba(0,0,0,0.04)',
+                          flex: '0 0 auto'
                         }}
                       >
                         <Typography variant="caption">

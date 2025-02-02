@@ -1,0 +1,102 @@
+/* AboutUs.css */
+.content-container {
+    display: flex;
+    flex-direction: row; /* Default layout (row) for desktop */
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1400px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 50px;
+    gap: 30px; /* Add gap between text and image */
+}
+
+.text-content {
+    flex: 1.5; /* Increase the width of the paragraph */
+    padding-right: 40px;
+}
+
+.heading {
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(90deg, #ffffff, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    color: #000;
+}
+
+.paragraph {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.image-content {
+    flex: 1;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Gradient animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Stack the content vertically on mobile */
+        gap: 20px; /* Reduce the gap between text and image */
+    }
+
+    .text-content {
+        padding-right: 0;
+        flex: 1; /* Keep the text content width appropriate for smaller screens */
+    }
+
+    .heading {
+        font-size: 30px;
+    }
+
+    .paragraph {
+        font-size: 16px;
+    }
+
+    .image-content {
+        order: 2; /* Image comes last */
+        margin-top: 20px;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Extra small screen styles */
+@media screen and (max-width: 480px) {
+    .heading {
+        font-size: 26px;
+    }
+
+    .paragraph {
+        font-size: 14px;
+    }
+
+    .text-content {
+        padding: 10px;
+    }
+}

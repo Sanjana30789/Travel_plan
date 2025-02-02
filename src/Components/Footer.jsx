@@ -40,10 +40,9 @@ const Footer = () => {
         <div style={footerStyles.section}>
           <h3 style={footerStyles.heading}>Travel Planner</h3>
           <p style={footerStyles.text}>
-  VoyageHack Vista, powered by <strong>TBO</strong>, is your personalized trip companion,  
-  helping you explore destinations, book flights, and create seamless itineraries.
-</p>
-
+            VoyageHack Vista, powered by <strong>TBO</strong>, is your personalized trip companion,  
+            helping you explore destinations, book flights, and create seamless itineraries.
+          </p>
         </div>
 
         {/* Quick Links */}
@@ -101,10 +100,12 @@ const footerStyles = {
     maxWidth: "1400px",
     margin: "0 auto",
     padding: "0 20px",
+    flexWrap: "wrap",  // Allow wrapping on smaller screens
   },
   section: {
     flex: "1",
     margin: "0 20px",
+    minWidth: "250px",  // Ensure sections don't get too small
   },
   heading: {
     fontSize: "22px",
@@ -148,6 +149,65 @@ const footerStyles = {
     fontSize: "16px",
     width: "100%",
     textAlign: "center",
+  },
+  // Mobile-responsive styles
+  '@media (max-width: 768px)': {
+    container: {
+      padding: "20px 0",
+    },
+    sections: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
+    section: {
+      marginBottom: "20px",
+      flex: "none",
+      width: "100%",
+    },
+    heading: {
+      fontSize: "20px",
+    },
+    text: {
+      fontSize: "16px",
+    },
+    list: {
+      fontSize: "16px",
+    },
+    link: {
+      fontSize: "16px",
+    },
+    socialIcons: {
+      fontSize: "20px",
+      gap: "10px",
+    },
+    bottom: {
+      fontSize: "14px",
+    },
+  },
+
+  '@media (max-width: 480px)': {
+    container: {
+      padding: "15px 0",
+    },
+    heading: {
+      fontSize: "18px",
+    },
+    text: {
+      fontSize: "14px",
+    },
+    list: {
+      fontSize: "14px",
+    },
+    link: {
+      fontSize: "14px",
+    },
+    socialIcons: {
+      fontSize: "18px",
+      gap: "8px",
+    },
+    bottom: {
+      fontSize: "12px",
+    },
   },
 };
 

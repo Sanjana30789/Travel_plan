@@ -52,31 +52,12 @@ const FlightCard = ({ flight }) => (
           <Typography variant="body1" gutterBottom>
             {flight.departure.airport}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="textSecondary">
             Terminal: {flight.departure.terminal}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="textSecondary">
             Gate: {flight.departure.gate}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {dayjs(flight.departure.scheduled).format('HH:mm, DD MMM YYYY')}
-          </Typography>
-        </Grid>
-
-        {/* Flight Duration */}
-        <Grid item xs={12} md={2}>
-          <Box sx={{ 
-            height: '100%', 
-            display: 'flex', 
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
-            <AccessTimeIcon color="action" />
-            <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 1 }}>
-              {flight.flight_duration}
-            </Typography>
-          </Box>
         </Grid>
 
         {/* Arrival Details */}
@@ -88,34 +69,16 @@ const FlightCard = ({ flight }) => (
           <Typography variant="body1" gutterBottom>
             {flight.arrival.airport}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="textSecondary">
             Terminal: {flight.arrival.terminal}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="textSecondary">
             Gate: {flight.arrival.gate}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {dayjs(flight.arrival.scheduled).format('HH:mm, DD MMM YYYY')}
           </Typography>
         </Grid>
       </Grid>
 
-      {/* Price and Booking Section */}
-      <Box sx={{ 
-        mt: 3, 
-        pt: 2, 
-        borderTop: 1, 
-        borderColor: 'divider',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}>
-        <Chip
-          label={`$${flight.price}`}
-          color="success"
-          size="large"
-          sx={{ fontSize: '1.2rem', px: 2 }}
-        />
+      <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Button
           variant="contained"
           color="primary"
@@ -158,8 +121,9 @@ const FlightResults = ({ flights }) => {
             Return Flights
           </Typography>
           {flights.return.map((flight, index) => (
-            <FlightCard key={`return-${index}`} flight={flight} />
-          ))}
+  <FlightCard key={`return-${index}`} flight={flight} />
+))}
+
         </>
       )}
     </Container>

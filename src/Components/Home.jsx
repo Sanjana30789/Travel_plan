@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AboutUs from './About'
 import Footer from './Footer'
@@ -14,15 +14,27 @@ import backgroundVideo from "../assets/Explore with us.mp4";  // Adjust the path
 
 const Homepage = () => {
   const navigate = useNavigate();
+  
+  // State to track window width for responsiveness
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+
+    // Add event listener for window resizing
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const styles = {
     container: {
       position: "relative",
-      height: "100vh",
+      height: "100vh",  // Full viewport height
       display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
+      justifyContent: "center", // Center horizontally
+      alignItems: "center", // Center vertically
       color: "#fff",
       textAlign: "center",
       fontFamily: "Arial, sans-serif",
@@ -32,15 +44,16 @@ const Homepage = () => {
     },
     video: {
       position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      zIndex: -1,  // Ensure the video stays behind the content
+      top: "50%",  // Move video to the center vertically
+      left: "50%", // Move video to the center horizontally
+      transform: "translate(-50%, -50%)", // Ensure the video is perfectly centered
+      width: "100%",  // Ensure the video takes the full width of the screen
+      height: "100%", // Ensure the video takes the full height of the screen
+      objectFit: "cover",  // Ensure it scales proportionally
+      zIndex: -1, // Keeps the video behind the content
     },
     heading: {
-      fontSize: "3rem",
+      fontSize: windowWidth < 480 ? "2rem" : "3rem",
       fontWeight: "bold",
       marginBottom: "1rem",
       textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
@@ -53,7 +66,7 @@ const Homepage = () => {
       justifyContent: "center",
     },
     locationButton: {
-      fontSize: "1.2rem",
+      fontSize: windowWidth < 480 ? "1rem" : "1.2rem", // Adjust button size for small screens
       backgroundColor: "black",
       color: "#fff",
       padding: "0.5rem 1rem",
@@ -64,7 +77,7 @@ const Homepage = () => {
       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
     },
     button: {
-      fontSize: "1.5rem",
+      fontSize: windowWidth < 480 ? "1.2rem" : "1.5rem", // Adjust button size for small screens
       padding: "0.8rem 2rem",
       backgroundColor: "black",
       color: "#fff",
@@ -78,11 +91,11 @@ const Homepage = () => {
       padding: "2rem",
       backgroundColor: "rgba(0, 0, 0, 0.7)",
       borderRadius: "15px",
-      width: "90%",
+      width: windowWidth < 480 ? "100%" : "90%", // Full width for mobile
       margin: "2rem auto",
     },
     destinationHeading: {
-      fontSize: "2.5rem",
+      fontSize: windowWidth < 480 ? "1.8rem" : "2.5rem", // Adjust heading size for small screens
       fontWeight: "bold",
       color: "#fff",
       marginBottom: "1.5rem",
@@ -90,7 +103,7 @@ const Homepage = () => {
     },
     destinationGrid: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+      gridTemplateColumns: windowWidth < 768 ? "1fr 1fr" : "repeat(auto-fit, minmax(200px, 1fr))", // Adjust grid layout for smaller screens
       gap: "1.5rem",
     },
     destinationCard: {
@@ -101,7 +114,7 @@ const Homepage = () => {
     },
     destinationImage: {
       width: "100%",
-      height: "200px",
+      height: windowWidth < 480 ? "150px" : "200px", // Adjust image height for smaller screens
       objectFit: "cover",
       borderRadius: "15px",
     },
@@ -131,19 +144,6 @@ const Homepage = () => {
           <source src={backgroundVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        {/* <h1 style={styles.heading}>Explore Places With Us</h1> */}
-        {/* <div style={styles.locationList}>
-          {["London", "Paris", "Mumbai", "Delhi"].map((location) => (
-            <button
-              key={location}
-              style={styles.locationButton}
-              onClick={() => handleLocationClick(location)}
-            >
-              {location}
-            </button>
-          ))}
-        </div> */}
-        {/* <button style={styles.button}>Start Exploring</button> */}
       </div>
 
       {/* Top Destinations Section */}
@@ -165,9 +165,10 @@ const Homepage = () => {
 
       {/* About us section */}
       <div>
-        <AboutUs/>
+        <AboutUs />
       </div>
-       <Footer/>
+      
+      <Footer />
     </div>
   );
 };

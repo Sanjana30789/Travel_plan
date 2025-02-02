@@ -9,20 +9,19 @@
     padding: 5px 0; 
     background-color: #3B3C36; 
     z-index: 1000; 
-    /* margin: 0;  */
+    /* margin: 0; */
 }
 
-
- .nav-logo{
+.nav-logo {
     display: flex;
     align-items: center;
-    gap : 20px
-} 
+    gap: 20px;
+}
 
- .nav-logo img{
+.nav-logo img {
     width: 70px;
     border-radius: 20px;
-} 
+}
 
 .nav-logo p {
     color: white;
@@ -30,7 +29,7 @@
     font-weight: bolder;
 }
 
-.nav-menu{
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
@@ -40,7 +39,7 @@
     font-weight: 500;
 }
 
-.nav-menu hr{
+.nav-menu hr {
     border: none;
     width: 80%;
     height: 3px;
@@ -52,11 +51,10 @@
     position: relative;
     padding: 5px;
     cursor: pointer;
+}
 
-  }
-  
-  .nav-menu li:hover::after,
-  .nav-menu li.active::after {
+.nav-menu li:hover::after,
+.nav-menu li.active::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -64,9 +62,9 @@
     width: 100%;
     height: 2px;
     background-color: #007bff; /* Adjust to your theme color */
-  }
+}
 
-.nav-login button{
+.nav-login button {
     margin-top: 17px;
     width: 100px;
     height: 40px;
@@ -80,9 +78,94 @@
     cursor: pointer;
 }
 
-
-.no-style{
-  color: inherit;  /* Use the parent's text color */
-  text-decoration: none; 
+.no-style {
+    color: inherit;  /* Use the parent's text color */
+    text-decoration: none; 
 }
 
+/* Mobile-specific styles */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.dot {
+    width: 30px; /* Increased size for visibility */
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dot:nth-child(2) {
+    width: 25px; /* Slightly smaller middle dot */
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .nav-logo {
+        gap: 10px; 
+        /* Reduced gap between logo and text */
+    }
+
+    .nav-logo p {
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #3B3C36;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        gap: 20px;
+        transition: max-height 0.3s ease-out;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .nav-menu.open {
+        display: flex;
+        max-height: 500px; /* Increase this value if you have more items */
+    }
+
+    .nav-menu li {
+        padding: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .nav-logo {
+        justify-content: space-between;
+        width: 30%;
+    }
+}
+
+/* For even smaller screens (up to 480px) */
+@media (max-width: 480px) {
+    .nav-logo p {
+        font-size: 16px;
+    }
+
+    .nav-menu li a {
+        font-size: 14px;
+    }
+
+    .nav-login button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+} 

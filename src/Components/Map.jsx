@@ -3,7 +3,6 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { TextField, Autocomplete, Paper } from '@mui/material';
 
-
 const MAPBOX_TOKEN = "pk.eyJ1IjoiZGhydXZ2di0wNCIsImEiOiJjbHp4eHhlODEwdHBqMmlzZ3ZvZHYxa3BhIn0.sGikVHF9zf_yV4zsGZVu1Q";
 
 function Map({ location, onPlaceSelect, searchQuery }) {
@@ -50,10 +49,7 @@ function Map({ location, onPlaceSelect, searchQuery }) {
         zoom: 12
       });
 
-      // Add navigation controls
       map.current.addControl(new mapboxgl.NavigationControl());
-
-      // Add user location marker
       new mapboxgl.Marker({ color: '#2196f3' })
         .setLngLat([location.lng, location.lat])
         .addTo(map.current);
@@ -76,10 +72,7 @@ function Map({ location, onPlaceSelect, searchQuery }) {
           .setPopup(
             new mapboxgl.Popup().setHTML(
               `<h3>${place.name}</h3>
-               <p>${place.vicinity}</p>
-               <button onclick="handlePlaceSelect(${JSON.stringify(place)})">
-                 Get Details
-               </button>`
+               <p>${place.vicinity}</p>`
             )
           )
           .addTo(map.current);
@@ -91,7 +84,6 @@ function Map({ location, onPlaceSelect, searchQuery }) {
 
   return (
     <div className="map-container">
-      <div ref={mapContainer} style={{ height: '100%' }} />
       <Paper className="map-search">
         <Autocomplete
           options={searchResults}
@@ -112,6 +104,35 @@ function Map({ location, onPlaceSelect, searchQuery }) {
           )}
         />
       </Paper>
+      <div ref={mapContainer} className="map" style={{ height: '100%' }} />
+      
+      {/* Inline CSS */}
+      <style jsx>{`
+        .map-container {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .map-search {
+          margin-bottom: 20px; /* Space between search and map */
+        }
+
+        .map {
+          flex-grow: 1; /* The map takes up the remaining space */
+        }
+
+        /* Mobile-specific styles */
+        @media only screen and (max-width: 768px) {
+          .map-container {
+            flex-direction: column-reverse; /* Place the map below the search on mobile */
+          }
+
+          .map-search {
+            margin-bottom: 0;
+            margin-top: 10px;
+          }
+        }
+      `}</style>
     </div>
   );
 }
