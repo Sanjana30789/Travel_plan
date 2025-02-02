@@ -66,10 +66,13 @@ const Footer = () => {
             <a href="https://instagram.com" style={footerStyles.icon}>&#xf16d;</a>
           </div>
           <p style={footerStyles.contact}>
-            Email: <a href="mailto:support@travelplanner.com" style={footerStyles.link}>support@travelplanner.com</a>
+            Email: <a href="mailto:2022.ashishkumar.maurya@ves.ac.in" style={footerStyles.link}>2022.ashishkumar.maurya@ves.ac.in</a>
           </p>
           <p style={footerStyles.contact}>
-            Phone: <a href="tel:+123456789" style={footerStyles.link}>+1 234 567 89</a>
+            Alternate Email: <a href="mailto:2022.sanjana.choubey@ves.ac.in" style={footerStyles.link}>2022.sanjana.choubey@ves.ac.in</a>
+          </p>
+          <p style={footerStyles.contact}>
+            Phone: <a href="tel:+91 81692 29715" style={footerStyles.link}>+91 81692 29715</a>
           </p>
         </div>
       </div>

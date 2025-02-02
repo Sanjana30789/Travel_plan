@@ -206,8 +206,8 @@ function App() {
     },
     {
       id: '2',
-      panorama: '/2.jpg',
-      thumbnail: '/2.jpg',
+      panorama: '/22.jpg',
+      thumbnail: '/22.jpg',
       name: '2',
       options: {
         caption: '2',
@@ -215,8 +215,8 @@ function App() {
     },
     {
       id: '3',
-      panorama: '/3.jpg',
-      thumbnail: '/3.jpg',
+      panorama: '/33.jpg',
+      thumbnail: '/33.jpg',
       name: '3',
       options: {
         caption: '3',
