@@ -5,6 +5,7 @@ import VideoCard from "./VideoCard";
 import parisVideo from "../assets/paris.mp4";
 import delhiVideo from "../assets/delhi.mp4";
 import mumbaiVideo from "../assets/Explore the Mumbai...mp4";
+import Footer from './Footer'
 
 const Explore = () => {
   const styles = {
@@ -30,7 +31,7 @@ const Explore = () => {
     },
     pageContainer: {
       marginTop: "5px",
-      padding: "50px 0",
+      
       background: "linear-gradient(65deg, #0000FF,#FFFFFF)", // Gradient background
       animation: "backgroundAnimation 10s infinite alternate",
       minHeight: "100vh",
@@ -60,6 +61,7 @@ const Explore = () => {
         <VideoCard destination="Bangalore" videoSrc={mumbaiVideo} path="/photosphere" />
         <VideoCard destination="London" videoSrc={parisVideo} path="/photosphere" />
       </div>
+      <Footer/>
     </div>
   );
 };

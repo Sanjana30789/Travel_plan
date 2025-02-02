@@ -375,7 +375,7 @@ function App() {
             />
           </Routes>
 
-          <Footer />
+          {/* <Footer /> */}
         </ThemeProvider>
       </LocalizationProvider>
     </Router>

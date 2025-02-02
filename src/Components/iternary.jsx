@@ -2,6 +2,7 @@ import React, { useState ,useRef} from 'react';
 import axios from 'axios';
 import './iternary.css';
 import html2pdf from 'html2pdf.js';
+import Footer from './Footer';
 
 // const TravelForm = () => {
 //   const [formData, setFormData] = useState({
@@ -493,8 +494,11 @@ const TravelForm = () => {
           </div>
         </>
       )}
+       <Footer />
     </div>
+    
   );
+  
 };
 
 export default TravelForm;

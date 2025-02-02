@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import AboutUs from './About'
+import Footer from './Footer'
 
 // Import the local image(s)
 import parisImage from "../assets/paris.jpg";
@@ -166,6 +167,7 @@ const Homepage = () => {
       <div>
         <AboutUs/>
       </div>
+       <Footer/>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { LoadScript, GoogleMap, StreetViewPanorama } from "@react-google-maps/api";
+import Footer from './Footer'
 
 const GOOGLE_MAPS_API_KEY = "AIzaSyAgu4rFP8QUJuBO6IKa83JUGCreeKagZB0";
 
@@ -151,7 +152,9 @@ const PanoramaViewer = () => {
           </div>
         )}
       </div>
+      <Footer/>
     </LoadScript>
+    
   );
 };
 

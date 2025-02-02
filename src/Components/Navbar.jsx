@@ -20,11 +20,12 @@ const Navbar = () => {
          <Link to="/" className="no-style">Home</Link> 
         </li>
         <li 
-          className={menu === "Explore" ? "active" : ""} 
-          onClick={() => setMenu("Explore")}
+          className={menu === "Example" ? "active" : ""} 
+          onClick={() => setMenu("Example")}
         >
-           <Link to="/explore" className="no-style">Explore</Link>
+          <Link to="/panaroma" className="no-style">Example</Link>
         </li>
+       
         <li 
           className={menu === "Local-Guide" ? "active" : ""} 
           onClick={() => setMenu("Local-Guide")}
@@ -45,31 +46,14 @@ const Navbar = () => {
           <Link to="/flightsearch" className="no-style">Flights Book</Link>
         </li>
         <li 
-          className={menu === "Example" ? "active" : ""} 
-          onClick={() => setMenu("Example")}
+          className={menu === "Explore" ? "active" : ""} 
+          onClick={() => setMenu("Explore")}
         >
-          <Link to="/panaroma" className="no-style">Example</Link>
+           <Link to="/explore" className="no-style">Explore</Link>
         </li>
-        
 
-        {/* <li 
-          className={menu === "About Us" ? "active" : ""} 
-          onClick={() => setMenu("About Us")}
-        ><Link to="/about" className="no-style">About Us</Link> 
-        </li> */}
-
-        {/* <li
-          className={menu === "Contact" ? "active" : ""}
-          onClick={() => setMenu("Contact")}
-        >
-          <Link to="/contact" className="no-style" >
-            Contact
-          </Link>
-        </li> */}
+       
       </ul>
-      {/* <div className="nav-login">
-        <button>Login</button>
-      </div> */}
     </div>
   );
 };
