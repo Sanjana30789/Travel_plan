@@ -180,6 +180,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './styles/guide.css';
+import PanoramaViewer from './Components/360';
 
 const theme = createTheme({
   palette: {
@@ -312,6 +313,7 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/itinerary" element={<TravelForm />} />
             <Route path="/explore" element={<Explore />} />
+            <Route path="/panaroma" element={<PanoramaViewer />} />
             <Route
               path="/flightsearch"
               element={

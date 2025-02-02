@@ -96,11 +96,7 @@ function AboutUs() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
-            Welcome to our website! We are a passionate team dedicated to providing
-            the best services to our customers. Our mission is to make travel
-            easier, more enjoyable, and more affordable. We strive to offer an
-            exceptional experience, whether you're planning your next vacation or
-            looking for the best flight deals.
+            Welcome to TBO, your global partner in simplifying travel solutions for businesses worldwide. Since our establishment in 2006, TBO has evolved from a single-product air ticketing company into a leading global travel distribution platform. Our proprietary technology seamlessly connects travel buyers and suppliers, ensuring streamlined transactions across the diverse landscape of global travel.
           </motion.p>
           <motion.p
             style={paragraphStyle}
@@ -108,10 +104,9 @@ function AboutUs() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.1, duration: 0.6 }}
           >
-            With years of experience in the travel industry, we are committed to
-            helping our users plan their trips with confidence. Our platform offers
-            a wide range of tools and resources to make your travel planning process
-            seamless and stress-free. Join us in making your next trip unforgettable!
+            At TBO, we offer a comprehensive range of travel solutions including air travel, hotels, rail, holiday packages, car rentals, transfers, sightseeing, cruise, and cargo. Leveraging data analytics, artificial intelligence, and machine learning, our proprietary platform enhances visibility and sales of relevant travel products based on specific search parameters.
+
+
           </motion.p>
         </div>
         <div style={imageStyle}>

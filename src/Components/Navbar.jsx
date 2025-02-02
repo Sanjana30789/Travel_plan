@@ -47,13 +47,16 @@ const Navbar = () => {
         <li 
           className={menu === "Example" ? "active" : ""} 
           onClick={() => setMenu("Example")}
-        >Example
+        >
+          <Link to="/panaroma" className="no-style">Example</Link>
         </li>
-        <li 
+        
+
+        {/* <li 
           className={menu === "About Us" ? "active" : ""} 
           onClick={() => setMenu("About Us")}
         ><Link to="/about" className="no-style">About Us</Link> 
-        </li>
+        </li> */}
 
         {/* <li
           className={menu === "Contact" ? "active" : ""}

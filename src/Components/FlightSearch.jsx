@@ -41,7 +41,7 @@ const FlightSearch = ({ onSearch }) => {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{ backgroundColor: '#f0f0f0', py: 4 }} >
       <Paper elevation={3} sx={{ p: 4, mt: 4 }}>
         <Box component="form" onSubmit={handleSubmit}>
           <Typography variant="h4" gutterBottom align="center">
