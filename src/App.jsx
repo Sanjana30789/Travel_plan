@@ -163,9 +163,9 @@ import FlightResults from './Components/FlightResults';
 import { searchFlights } from './services/api';
 import PhotoSphereViewer from './Components/PhotoSphere';
 import Explore from './Components/Explore';
-import Map from './components/Map';
-import ChatInterface from './components/ChatInterface';
-import WeatherWidget from './components/WeatherWidget';
+import Map from './Components/Map';
+import ChatInterface from './Components/ChatInterface';
+import WeatherWidget from './Components/WeatherWidget';
 import {
   Container,
   CssBaseline,
